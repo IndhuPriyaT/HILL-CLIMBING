@@ -40,6 +40,7 @@ Feedback is provided in terms of heuristic function
 
 <hr>
 <h2>Program:</h2>
+
 ```
 import random
 import string
@@ -96,7 +97,7 @@ Score: 1  Solution :  Artificial Intelligencf<br>
 Score: 1  Solution :  Artificial Intelligencf<br>
 Score: 1  Solution :  Artificial Intelligencf<br>
 Score: 0  Solution :  Artificial Intelligence<br>
-
+<hr>
 <h2>Output</h2>
 
 <img width="1920" height="1200" alt="Screenshot (131)" src="https://github.com/user-attachments/assets/f92305f2-6dc2-45a1-b289-764c348a24c8" />
