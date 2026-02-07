@@ -1,6 +1,6 @@
 <h1>ExpNo 5 : Implement Simple Hill Climbing Algorithm</h1> 
-<h3>Name:             </h3>
-<h3>Register Number:             </h3>
+<h3>Name: Indhu Priya.T            </h3>
+<h3>Register Number:  212224110024          </h3>
 <H3>Aim:</H3>
 <p>Implement Simple Hill Climbing Algorithm and Generate a String by Mutating a Single Character at each iteration </p>
 <h2> Theory: </h2>
@@ -39,6 +39,43 @@ Feedback is provided in terms of heuristic function
 <p> Lopp Step -2 and Step-3  until we achieve the score to be Zero to achieve Global Minima.</p>
 
 <hr>
+<h2>Program:</h2>
+```
+import random
+import string
+def generate_random_solution(ans):
+    l=len(ans)
+    random_soln=[random.choice(string.printable) for _ in range(l)]
+    return random_soln
+def mutate(soln):
+    ind=random.randint(0,len(soln)-1)
+    soln[ind]=random.choice(string.printable)
+    return soln
+def evaluate(solution,answer):
+    
+    ans=list(answer)
+    diff=0
+    for i in range(len(solution)):
+        s=solution[i]
+        a=ans[i]
+        diff= diff+ abs(ord(a)-ord(s))
+    return diff
+        
+def simplehillclimbing():
+    answer=input()
+    best=generate_random_solution(answer)
+    best_score=evaluate(best,answer)
+    while True:
+        print(best_score,''.join(best))
+        if best_score==0:
+            break
+        new_soln=mutate(list(best))
+        score=evaluate(new_soln,answer)
+        if score<best_score:
+            best_score=score
+            best=new_soln
+simplehillclimbing()
+```
 <h2>Sample Input and Output</h2>
 <h2>Sample String:</h2> Artificial Intelligence
 <h2>Output:</h2>
@@ -59,3 +96,8 @@ Score: 1  Solution :  Artificial Intelligencf<br>
 Score: 1  Solution :  Artificial Intelligencf<br>
 Score: 1  Solution :  Artificial Intelligencf<br>
 Score: 0  Solution :  Artificial Intelligence<br>
+
+<h2>Output</h2>
+
+<img width="1920" height="1200" alt="Screenshot (131)" src="https://github.com/user-attachments/assets/f92305f2-6dc2-45a1-b289-764c348a24c8" />
+
